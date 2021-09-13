@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="RSVP.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>RSVP</title>
+        <link rel="stylesheet" type="text/css" href="Styles.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table>
+                <tr>
+                    <td class="headerFooter" colspan="2"> 
+                        <h3>RSVP</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="menu">&nbsp; Menu</td>
+                    <td>&nbsp;
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="headerFooter" colspan="2">&nbsp; Footer</td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

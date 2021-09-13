@@ -27,10 +27,26 @@ button[type=submit] {
 }
 
 table, td, th {
-    border: thin solid black;
+    border: none;
     border-collapse: collapse;
+    font-family: 'HoloLens MDL2 Assets';
+    font-size: larger;
     padding: 5px;
     background-color: lemonchiffon;
     text-align: left;
     margin: 10px 0;
+    width: 1127px;
 }
+
+
+.headerFooter {
+    height: 50px;
+    background-color: moccasin;
+    font-size:small;
+}
+
+.menu {
+    width: 200px;
+    height: 150px;
+}
+
