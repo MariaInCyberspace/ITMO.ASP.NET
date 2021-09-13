@@ -1,5 +1,4 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="RSVP.Site1" %>
-
 <!DOCTYPE html>
 
 <html>
@@ -18,13 +17,46 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="menu">&nbsp; Menu</td>
+                    <td class="menu">&nbsp; Menu
+                        <div class="menu">
+                            <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" Orientation="Vertical" ForeColor="Red">
+                                <Items>
+                                    <asp:menuitem NavigateUrl="~/Start.aspx" Text="Home"/>
+                                    <asp:MenuItem NavigateUrl="~/Reg.aspx" Text="Registration"/>
+                                    <asp:MenuItem NavigateUrl="~/Summary.aspx" Text="Registration report"/>
+                                </Items>
+                            </asp:Menu>
+                        </div>
+                    </td>
                     <td>&nbsp;
                         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
                     </td>
                 </tr>
                 <tr>
-                    <td class="headerFooter" colspan="2">&nbsp; Footer</td>
+                    <td class="headerFooter" colspan="2">&nbsp; Footer
+                        <div id="temo_footer"> 
+                            <ul class="footer_menu"> 
+                                <li>
+                                    <a href="Start.aspx">Home</a>
+
+                                </li> 
+                                <li>
+                                    <a href="Reg.aspx">Registration</a>
+
+                                </li> 
+                                <li>
+                                    <a href="Summary.aspx">Registration report</a>
+
+                                </li> 
+                                <li>
+                                    <a href="About.aspx">Подробности</a>
+
+                                </li> 
+
+                            </ul> 
+
+                        </div>
+                    </td>
                 </tr>
             </table>
         </div>

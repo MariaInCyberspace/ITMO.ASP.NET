@@ -1,18 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Summary.aspx.cs" Inherits="RSVP.Summary" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Summary.aspx.cs" MasterPageFile="~/Site1.Master" Inherits="RSVP.Summary" %>
+
 <%-- Added for the LINQ query to work --%>
 <%@ Import Namespace="RSVP" %> 
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Seminar attendees</title>
-    <link rel="stylesheet" href="Styles.css"/>
-
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="MainContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div>
             <h2>Invitations</h2>
 
@@ -50,6 +41,6 @@
                 </tbody>
             </table>
         </div>
-    </form>
-</body>
-</html>
+    </asp:Content>
+    
+
