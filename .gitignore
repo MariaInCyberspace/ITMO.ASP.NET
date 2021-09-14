@@ -361,3 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Lab2/RSVP
+/Lab1/RSVP/RSVP/WebForm1.aspx
+/Lab1/RSVP/RSVP/WebForm1.aspx.cs
+/Lab1/RSVP/RSVP/WebForm1.aspx.designer.cs
+/Lab1/RSVP/RSVP/Class1.cs
