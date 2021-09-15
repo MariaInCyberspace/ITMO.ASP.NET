@@ -2,7 +2,8 @@
 <asp:Content ID="MainContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
             <div>
-                <h1>Seminar invitation</h1>
+                <h1>Seminar invitation
+                </h1>
                 <p></p>
                 
             </div>
