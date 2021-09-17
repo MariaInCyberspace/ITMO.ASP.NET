@@ -57,6 +57,9 @@
                             </ul> 
 
                         </div>
+                        <div class="footer">
+                            <asp:Literal ID="VisitorLiteral" runat="server"></asp:Literal>
+                        </div>
                     </td>
                 </tr>
             </table>

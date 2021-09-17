@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="Reg.aspx" />
     <Content Include="seeyouthere.html" />
     <Content Include="sorryyoucantcome.html" />
@@ -83,6 +84,9 @@
     </Compile>
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="GuestResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
