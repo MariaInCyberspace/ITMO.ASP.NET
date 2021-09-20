@@ -82,6 +82,7 @@
     <Content Include="Start.aspx" />
     <Content Include="Styles.css" />
     <Content Include="Summary.aspx" />
+    <Content Include="SummaryDB.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +127,13 @@
     </Compile>
     <Compile Include="Summary.aspx.designer.cs">
       <DependentUpon>Summary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SummaryDB.aspx.cs">
+      <DependentUpon>SummaryDB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SummaryDB.aspx.designer.cs">
+      <DependentUpon>SummaryDB.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
