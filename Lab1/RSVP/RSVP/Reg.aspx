@@ -32,7 +32,21 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
                     ErrorMessage="Fill out the phone field" ForeColor="Red" ControlToValidate="email">Don&#39;t leave the field empty</asp:RequiredFieldValidator>
             </div> 
-            <div> <label>Will you be giving a talk?</label> <asp:CheckBox ID="CheckBoxYN" runat="server" />
+            <div> 
+                <label>Will you be giving a talk?</label> 
+                <asp:CheckBox ID="CheckBoxYN" runat="server" />
+            </div>
+            <div> Enter report title:
+                <asp:TextBox ID="TextBoxTitle" runat="server" Width="345px"></asp:TextBox>
+            </div>
+            <div> Enter report annotation: 
+                <asp:TextBox ID="TextBoxTextAnnot" runat="server" Width="345px"></asp:TextBox>
+            </div>
+            <div> Enter report title:
+                <asp:TextBox ID="TextBoxTitle2" runat="server" Width="345px"></asp:TextBox>
+            </div>
+            <div> Enter report annotation:
+                <asp:TextBox ID="TextBoxTextAnnot2" runat="server" Width="345px"></asp:TextBox>
             </div>
             <div>
             <button type="submit">Submit an RSVP response</button>
