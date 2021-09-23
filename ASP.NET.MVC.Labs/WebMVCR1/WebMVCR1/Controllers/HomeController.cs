@@ -20,5 +20,12 @@ namespace WebMVCR1.Controllers
             string Greeting = hour < 12 ? "Top of the morning to ya!" : "Afternoon!"; 
             return Greeting; 
         }
+
+        public string Index(string hel)
+        {
+            int hour = DateTime.Now.Hour;
+            string Greeting = hour < 12 ? "Morning" : "Good day" + ", " + hel;
+            return Greeting;
+        }
     }
 }
