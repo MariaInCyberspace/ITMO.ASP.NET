@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebMVCR1.Models;
 
 namespace WebMVCR1.Controllers
 {
@@ -23,9 +24,7 @@ namespace WebMVCR1.Controllers
 
         public string Index(string hel)
         {
-            int hour = DateTime.Now.Hour;
-            string Greeting = hour < 12 ? "Morning" : "Good day" + ", " + hel;
-            return Greeting;
+            return ModelClass.ModelHello() + ", " + hel;
         }
     }
 }
