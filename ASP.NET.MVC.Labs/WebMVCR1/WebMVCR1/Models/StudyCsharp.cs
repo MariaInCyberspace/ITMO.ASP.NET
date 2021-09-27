@@ -136,6 +136,60 @@ namespace WebMVCR1.Models
             }
         }
 
+        public static string ExeTriangle()
+        {
+            Triangle tr1 = new Triangle(3, 5, 6);
+            string sq1 = String.Format("Area of the shape {0} is: {1:0.##}", tr1.Name, tr1.Area);
+            return sq1;
+        }
+
+        public static string ExeCircle()
+        {
+            Circle circ1 = new Circle(3);
+            string sq = String.Format("Area of the shape {0} is: {1:0.##}", circ1.Name, circ1.Area);
+            return sq;
+        }
         
+    }
+
+    public class Triangle
+    {
+        public double Sta { get; set; }
+        public double Stb { get; set; }
+        public double Stc { get; set; }
+
+        public string Name => $"Triangle with sides: {Sta}, {Stb}, {Stc}";
+        
+        public double Perimeter => Sta + Stb + Stc;
+
+        public double Area
+        {
+            get
+            {
+                double sq = Math.Sqrt(Perimeter / 2 * (Perimeter / 2 - Sta) * (Perimeter / 2 - Stb) * (Perimeter / 2 - Stc));
+                return sq;
+            }
+        }
+
+        public Triangle(double a, double b, double c)
+        {
+            Sta = a;
+            Stb = b;
+            Stc = c;
+        }
+    }
+
+    public class Circle
+    {
+        public double St { get; set; }
+        public string Name => $"Circle with a radius of {St}";
+
+        public Circle(double a)
+        {
+            St = a;
+        }
+
+        public double Diameter => 2 * Math.PI * St;
+        public double Area => Math.PI * Math.Pow(St, 2);
     }
 }
