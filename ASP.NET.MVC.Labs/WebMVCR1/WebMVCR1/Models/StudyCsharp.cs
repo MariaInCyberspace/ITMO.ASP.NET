@@ -149,40 +149,54 @@ namespace WebMVCR1.Models
             string sq = String.Format("Area of the shape {0} is: {1:0.##}", circ1.Name, circ1.Area);
             return sq;
         }
+
+        public static string ExePolim()
+        {
+            StringBuilder str = new StringBuilder();
+            Shape[] sh =
+            {
+                new Triangle(1, 2, 3),
+                new Circle(5),
+                new Triangle(5, 6, 8)
+            };
+            foreach (Shape item in sh)
+            {
+                str.AppendFormat("This shape is a {0}", item.Name + "<p>");
+            }
+            return str.ToString();
+        }
         
     }
 
-    public class Triangle
+    public class Triangle : Shape
     {
-        public double Sta { get; set; }
         public double Stb { get; set; }
         public double Stc { get; set; }
 
-        public string Name => $"Triangle with sides: {Sta}, {Stb}, {Stc}";
+        public override string Name => $"\"Triangle with sides: {St}, {Stb}, {Stc}\"";
         
-        public double Perimeter => Sta + Stb + Stc;
+        public double Perimeter => St + Stb + Stc;
 
         public double Area
         {
             get
             {
-                double sq = Math.Sqrt(Perimeter / 2 * (Perimeter / 2 - Sta) * (Perimeter / 2 - Stb) * (Perimeter / 2 - Stc));
+                double sq = Math.Sqrt(Perimeter / 2 * (Perimeter / 2 - St) * (Perimeter / 2 - Stb) * (Perimeter / 2 - Stc));
                 return sq;
             }
         }
 
         public Triangle(double a, double b, double c)
         {
-            Sta = a;
+            St = a;
             Stb = b;
             Stc = c;
         }
     }
 
-    public class Circle
+    public class Circle : Shape
     {
-        public double St { get; set; }
-        public string Name => $"Circle with a radius of {St}";
+        public override string Name => $"\"Circle with a radius of {St}\"";
 
         public Circle(double a)
         {
@@ -191,5 +205,12 @@ namespace WebMVCR1.Models
 
         public double Diameter => 2 * Math.PI * St;
         public double Area => Math.PI * Math.Pow(St, 2);
+    }
+
+    public class Shape
+    {
+        public double St { get; set; }
+
+        virtual public string Name => $"\"Shape\"";
     }
 }
