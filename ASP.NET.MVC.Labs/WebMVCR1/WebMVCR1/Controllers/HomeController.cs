@@ -24,9 +24,9 @@ namespace WebMVCR1.Controllers
 
         public string Index()
         {
-            // The method returns account types in string format
-            // return StudyCsharp.ExeEnum();
-            return StudyCsharp.ExeStruct();
+            // return StudyCsharp.ExeSwitch(StudyCsharp.SetStatus(0));
+            // return StudyCsharp.GetFunction(0, 9);
+            return StudyCsharp.ExeFactorial(0);
         }
 
         
