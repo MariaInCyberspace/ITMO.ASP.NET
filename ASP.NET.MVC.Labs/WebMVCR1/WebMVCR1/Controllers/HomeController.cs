@@ -29,7 +29,8 @@ namespace WebMVCR1.Controllers
             // return StudyCsharp.ExeFactorial(0);
             // return StudyCsharp.ExeTriangle();
             // return StudyCsharp.ExeCircle();
-            return StudyCsharp.ExePolim();
+            // return StudyCsharp.ExePolim();
+            return StudyCsharp.ExeCollection();
         }
 
         

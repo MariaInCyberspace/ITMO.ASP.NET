@@ -165,6 +165,25 @@ namespace WebMVCR1.Models
             }
             return str.ToString();
         }
+
+        public static string ExeCollection()
+        {
+            List<Circle> circles = new List<Circle>
+            {
+                new Circle(12),
+                new Circle(5),
+                new Circle(9),
+                new Circle(8)
+            };
+            circles.Add(new Circle(7));
+            circles.Sort();
+            StringBuilder stringBuilder = new StringBuilder();
+            foreach (Shape item in circles)
+            {
+                stringBuilder.AppendFormat("This shape is a {0} ", item.Name + "<p>");
+            }
+            return stringBuilder.ToString();
+        }
         
     }
 
@@ -194,7 +213,7 @@ namespace WebMVCR1.Models
         }
     }
 
-    public class Circle : Shape
+    public class Circle : Shape, IComparable<Circle>
     {
         public override string Name => $"\"Circle with a radius of {St}\"";
 
@@ -205,6 +224,19 @@ namespace WebMVCR1.Models
 
         public double Diameter => 2 * Math.PI * St;
         public double Area => Math.PI * Math.Pow(St, 2);
+
+        public int CompareTo(Circle other)
+        {
+            if (this.Area == other.Area)
+            {
+                return 0;
+            }
+            else if (this.Area > other.Area)
+            {
+                return 1;
+            }
+            else return -1;
+        }
     }
 
     public class Shape
