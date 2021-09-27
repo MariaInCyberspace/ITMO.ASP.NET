@@ -22,9 +22,13 @@ namespace WebMVCR1.Controllers
             return Greeting; 
         }
 
-        public string Index(string hel)
+        public string Index()
         {
-            return ModelClass.ModelHello() + ", " + hel;
+            // The method returns account types in string format
+            // return StudyCsharp.ExeEnum();
+            return StudyCsharp.ExeStruct();
         }
+
+        
     }
 }
