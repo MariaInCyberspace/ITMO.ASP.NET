@@ -5,15 +5,19 @@ using System.Web;
 using System.Web.Mvc;
 using WebMVCR1.Models;
 
+
 namespace WebMVCR1.Controllers
 {
     public class MyController : Controller
     {
         // GET: Home
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
+        public ViewResult Index()
+        {
+            int hour = DateTime.Now.Hour; 
+            ViewBag.Greeting = hour < 12 ? "Wakey wakey!" : "Look alive! You definitely should be up by now!"; 
+            ViewData["Mes"] = "Cheers!"; 
+            return View();
+        }
 
         public string Start() 
         { 
@@ -22,17 +26,5 @@ namespace WebMVCR1.Controllers
             return Greeting; 
         }
 
-        public string Index()
-        {
-            // return StudyCsharp.ExeSwitch(StudyCsharp.SetStatus(0));
-            // return StudyCsharp.GetFunction(0, 9);
-            // return StudyCsharp.ExeFactorial(0);
-            // return StudyCsharp.ExeTriangle();
-            // return StudyCsharp.ExeCircle();
-            // return StudyCsharp.ExePolim();
-            return StudyCsharp.ExeCollection();
-        }
-
-        
     }
 }
