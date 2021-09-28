@@ -1,0 +1,31 @@
+﻿@model WebMVCR1.Models.Person
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>InputData</title>
+</head>
+<body>
+    <div>
+        <form method="post">
+            <table>
+                <tr>
+                    <td><p>Enter your first name:</p></td>
+                    <td><input type="text" name="FirstName" /> </td>
+                </tr>
+                <tr>
+                    <td><p>Enter your surname:</p></td>
+                    <td><input type="text" name="LastName" /> </td>
+                </tr>
+                <tr><td><input type="submit" value="Submit" /> </td><td></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

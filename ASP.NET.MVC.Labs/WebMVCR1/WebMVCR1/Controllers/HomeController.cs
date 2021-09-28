@@ -19,6 +19,11 @@ namespace WebMVCR1.Controllers
             return View();
         }
 
+        public ViewResult InputData()
+        {
+            return View();
+        }
+
         public string Start() 
         { 
             int hour = DateTime.Now.Hour; 
