@@ -30,8 +30,15 @@ namespace WebMVCR1.Controllers
         [HttpPost]
         public ViewResult InputData(Person pers)
         {
-            db.AddResponse(pers);
-            return View("Hello", pers);
+            if (ModelState.IsValid)
+            {
+                db.AddResponse(pers);
+                return View("Hello", pers);
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public ViewResult OutputData()

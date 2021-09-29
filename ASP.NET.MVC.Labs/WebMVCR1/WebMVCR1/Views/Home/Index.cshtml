@@ -1,22 +1,12 @@
 ﻿
 @{
-    Layout = null;
+    ViewBag.Title = "Main Page";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> 
-        @ViewBag.Greeting Thanks for the peek, you cheeky bugger :) @ViewData["Mes"]
-        <p>
-            @Html.ActionLink("Input your data", "InputData")
-            @Html.ActionLink("Check out who's already in attendance, bro", "OutputData")
-        </p>
-    </div>
-</body>
-</html>
+<div>
+    @ViewBag.Greeting Thanks for the peek, you cheeky bugger!
+    <p>
+        Let's get to know each other a bit better! 
+        @Html.ActionLink("Tell us your name ", "InputData")
+    </p>
+</div>
