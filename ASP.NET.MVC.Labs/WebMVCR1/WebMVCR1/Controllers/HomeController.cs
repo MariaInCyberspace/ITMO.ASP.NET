@@ -8,9 +8,11 @@ using WebMVCR1.Models;
 
 namespace WebMVCR1.Controllers
 {
-    public class MyController : Controller
+    public class HomeController : Controller
     {
+        
         // GET: Home
+
         public ViewResult Index()
         {
             int hour = DateTime.Now.Hour; 
@@ -19,10 +21,18 @@ namespace WebMVCR1.Controllers
             return View();
         }
 
+        [HttpGet]
         public ViewResult InputData()
         {
             return View();
         }
+
+        [HttpPost]
+        public ViewResult InputData(Person pers)
+        {
+            return View("Hello", pers);
+        }
+
 
         public string Start() 
         { 

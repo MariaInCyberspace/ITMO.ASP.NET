@@ -9,6 +9,12 @@ namespace WebMVCR1.Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
+       public Person()
+        {
+            FirstName = "Some";
+            LastName = "Dude";
+        }
         public override string ToString() 
         { 
             return FirstName + " " + LastName;
