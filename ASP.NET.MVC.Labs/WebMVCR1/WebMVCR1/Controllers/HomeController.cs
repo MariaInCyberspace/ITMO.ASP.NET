@@ -10,7 +10,7 @@ namespace WebMVCR1.Controllers
 {
     public class HomeController : Controller
     {
-        
+        private static PersonRepository db = new PersonRepository();
         // GET: Home
 
         public ViewResult Index()
@@ -30,9 +30,16 @@ namespace WebMVCR1.Controllers
         [HttpPost]
         public ViewResult InputData(Person pers)
         {
+            db.AddResponse(pers);
             return View("Hello", pers);
         }
 
+        public ViewResult OutputData()
+        {
+            ViewBag.Pers = db.GetAllResponses;
+            ViewBag.Count = db.NumberOfPersons;
+            return View("ListPerson");
+        }
 
         public string Start() 
         { 
