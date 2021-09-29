@@ -13,19 +13,33 @@
 </head>
 <body>
     <div>
-        <form method="post">
-            <table>
+        @using (Html.BeginForm())
+        {
+            <table> 
+                <tr> 
+                    <td>
+                        <p>Enter your first name:</p>
+                    </td> 
+                    <td>
+                        @Html.TextBox("FirstName")
+                    </td> 
+                </tr> 
+                <tr> 
+                    <td>
+                        <p>Enter your last name:</p>
+                    </td> 
+                    <td>
+                        @Html.TextBoxFor(x => x.LastName)
+                    </td> 
+                </tr> 
                 <tr>
-                    <td><p>Enter your first name:</p></td>
-                    <td><input type="text" name="FirstName" /> </td>
-                </tr>
-                <tr>
-                    <td><p>Enter your surname:</p></td>
-                    <td><input type="text" name="LastName" /> </td>
-                </tr>
-                <tr><td><input type="submit" value="Submit" /> </td><td></td></tr>
-            </table>
-        </form>
+                    <td>
+                        <input type="submit" value="Submit" /> 
+                    </td>
+                    <td>
+                    </td>
+                </tr> 
+            </table>}
     </div>
 </body>
 </html>
