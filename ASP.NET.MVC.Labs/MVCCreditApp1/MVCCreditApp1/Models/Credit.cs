@@ -16,6 +16,6 @@ namespace MVCCreditApp1.Models
         // Max sum
          public virtual int Sum { get; set; }
         // Interest rate
-         public virtual int Procent { get; set; }
+         public virtual int Percent { get; set; }
     }
 }
