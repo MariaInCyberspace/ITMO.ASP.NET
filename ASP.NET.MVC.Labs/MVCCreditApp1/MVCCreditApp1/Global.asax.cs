@@ -18,6 +18,8 @@ namespace MVCCreditApp1
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            // Needed for the database initialization
             Database.SetInitializer(new CreditsDbInitializer());
             
         }
