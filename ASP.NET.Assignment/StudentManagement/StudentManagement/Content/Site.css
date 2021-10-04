@@ -1,0 +1,63 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+a {
+    color: #d7bd9e;
+    border: dotted;
+    padding: 3px;
+}
+
+.navbar-inverse {
+    background-color: #66635e;
+    border-color: antiquewhite;
+}
+
+a:hover {
+    color: #95836e;
+}
+
+.navbar-inverse .navbar-brand {
+    color: bisque;
+    border: none;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: bisque;
+    border: none;
+}
+
+
+.jumbotron {
+    background-color: #f8f1e5;
+    background-image: url(bookstore2.jpg)
+}
+
+.customJumbo {
+    background-blend-mode: hard-light;
+    background-color: #f8f1e5;
+    padding: 15px;
+    opacity: 0.5;
+    width: contain;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}

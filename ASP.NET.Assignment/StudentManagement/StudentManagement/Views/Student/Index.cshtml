@@ -1,0 +1,48 @@
+﻿@model IEnumerable<StudentManagement.Models.Student>
+
+@{
+    ViewBag.Title = "Student List";
+}
+
+<h2>Student List</h2>
+
+<p>
+    @Html.ActionLink("Add another Student", "Create")
+    @Html.ActionLink("View Top Five Students", "TopFive")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EntryDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => i.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => i.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => i.EntryDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = i.StudentId }) |
+                @Html.ActionLink("Details", "Details", new { id = i.StudentId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = i.StudentId }) |
+                @Html.ActionLink(linkText: "Add grades", actionName: "Enroll", controllerName:"Student", routeValues: new { id = i.StudentId }, htmlAttributes: null)
+            </td>
+        </tr>
+    }
+
+</table>
