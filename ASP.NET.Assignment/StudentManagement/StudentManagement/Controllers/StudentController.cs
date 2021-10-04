@@ -65,6 +65,8 @@ namespace StudentManagement.Controllers
             return RedirectToAction("Create", "Record");
         }
 
+
+        // Check out top five students at this establishment
         public ActionResult TopFive()
         {
             int sum = 0;

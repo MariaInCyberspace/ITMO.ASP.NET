@@ -35,11 +35,18 @@ namespace StudentManagement.Controllers
                 db.Record.Add(record);
                 db.SaveChanges();
                 return RedirectToAction("Index");
+
             }
-            
-            ViewBag.CourseId = new SelectList(db.Course, "CourseId", "Title", record.CourseId);
-            ViewBag.StudentId = new SelectList(db.Student, "StudentId", "FirstName", record.StudentId);
-            return View(record);
+           // var query = from r in db.Record join s in db.Student on r.StudentId equals s.StudentId select r;
+            //if (!query.Any(r => r.CourseId == record.CourseId))
+           // {
+                
+                ViewBag.CourseId = new SelectList(db.Course, "CourseId", "Title", record.CourseId);
+                ViewBag.StudentId = new SelectList(db.Student, "StudentId", "FirstName", record.StudentId);
+                return View(record);
+
+            // }
+
         }
 
         [HttpGet]

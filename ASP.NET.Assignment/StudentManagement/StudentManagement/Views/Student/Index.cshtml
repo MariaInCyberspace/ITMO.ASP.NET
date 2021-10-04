@@ -7,8 +7,9 @@
 <h2>Student List</h2>
 
 <p>
-    @Html.ActionLink("Add another Student", "Create")
-    @Html.ActionLink("View Top Five Students", "TopFive")
+    @Html.ActionLink("Add another Student", "Create") | 
+    @Html.ActionLink("View Top Five Students", "TopFive") | 
+    @Html.ActionLink(linkText:"View All Grades", actionName:"Index", controllerName:"Record")
 </p>
 <table class="table">
     <tr>
