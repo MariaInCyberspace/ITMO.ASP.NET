@@ -9,47 +9,45 @@
 
 
 @using (Html.BeginForm())
-    {
-<div class="customJumbo">
+{
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.LabelFor(record => record.Course.Title)
 
-    <div class="table">
-        <table>
-            <tr>
-                <th>
-                    @Html.LabelFor(record => record.Course.Title)
+            </th>
+            <td>
+                @Html.EditorFor(record => record.CourseId)
+                @Html.ValidationMessageFor(record => record.CourseId)
+            </td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(record => record.StudentId)</th>
+            <td>
+                @Html.EditorFor(record => record.StudentId)
+                @Html.ValidationMessageFor(record => record.StudentId)
+            </td>
+        </tr>
+        <tr>
+            <th>Current Grade</th>
+            <td>
+                @Html.EditorFor(record => record.Grade)
+                @Html.ValidationMessageFor(record => record.Grade)
+            </td>
+        </tr>
+    </table>
 
-                </th>
-                <td>   </td>
-                <td>
-                    @Html.EditorFor(record => record.CourseId)
-                    @Html.ValidationMessageFor(record => record.CourseId)
-                </td>
-            </tr>
-            <tr>
-                <th>@Html.LabelFor(record => record.StudentId)</th>
-                <th></th>
-                <td>
-                    @Html.EditorFor(record => record.StudentId)
-                    @Html.ValidationMessageFor(record => record.StudentId)
-                </td>
-            </tr>
-            <tr>
-                <th>Current Grade</th>
-                <td>  </td>
-                <td>
-                    @Html.EditorFor(record => record.Grade)
-                    @Html.ValidationMessageFor(record => record.Grade)
-                </td>
-            </tr>
-        </table>
+    <hr/>
 
-        <div>
-            <input type="submit" value="Save Changes" class="btn btn-primary" />
-        </div>
-        <hr />
-        <div>
-            @Html.ActionLink(linkText: "Back to Student List", actionName: "AllStudents", controllerName: "Student")
-        </div>
+    <div>
+        <input type="submit" value="Save Changes" class="btn btn-primary" />
+    </div>
+
+    <hr />
+
+    <div>
+        @Html.ActionLink(linkText: "Back to Student List", actionName: "AllStudents", controllerName: "Student")
     </div>
 </div>
 

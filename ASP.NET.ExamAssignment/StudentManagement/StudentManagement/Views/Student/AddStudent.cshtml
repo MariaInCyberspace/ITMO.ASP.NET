@@ -4,14 +4,14 @@
     ViewBag.Title = "Add Student";
 }
 
-<div class="col-md-2">
+<div>
     <h2>Add Student to the List</h2>
 </div>
 
 @using (Html.BeginForm())
 {
-<div class="customJumbo">
-    <table>
+<div>
+    <table class="table">
         <tr>
             <th>
                 @Html.LabelFor(student => student.FirstName)

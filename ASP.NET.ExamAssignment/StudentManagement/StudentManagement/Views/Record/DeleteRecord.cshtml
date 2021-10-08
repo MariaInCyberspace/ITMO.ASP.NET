@@ -3,57 +3,55 @@
     ViewBag.Title = "Delete Record of " + Model.Student.FirstName + " " + Model.Student.LastName;
 }
 
-<h2>Delete This Grade Entry of @Model.Student.FirstName @Model.Student.LastName?</h2>
+<h2>Delete This Grade Entry for @Model.Student.FirstName @Model.Student.LastName?</h2>
 
-<div class="customJumbo">
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.LabelFor(record => record.Course.Title)
+            </th>
+            <th>
+                @Html.DisplayFor(record => record.Course.Title)
+            </th>
 
-    <div class="table">
-        <table>
-            <tr>
-                <th>
-                    @Html.LabelFor(record => record.Course.Title)
-                </th>
-                <th>
-                    @Html.DisplayFor(record => record.Course.Title)
-                </th>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(record => record.CourseId)
+            </td>
+            <td>
+                @Html.DisplayFor(record => record.CourseId)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(record => record.StudentId)
+            </td>
+            <td>@Html.DisplayFor(record => record.StudentId)</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(record => record.Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(record => record.Grade)
+            </td>
+        </tr>
+    </table>
+    <hr/>
 
-            </tr>
-            <tr>
-                <td>
-                    @Html.LabelFor(record => record.CourseId)
-                </td>
-                <td>
-                    @Html.DisplayFor(record => record.CourseId)
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.LabelFor(record => record.StudentId)
-                </td>
-                <td>@Html.DisplayFor(record => record.StudentId)</td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.LabelFor(record => record.Grade)
-                </td>
-                <td>
-                    @Html.DisplayFor(record => record.Grade)
-                </td>
-            </tr>
-        </table>
+    @using (Html.BeginForm())
+    {
 
-        @using (Html.BeginForm())
-        {
-
-            <div class="form-group">
-                <input type="submit" value="Delete Entry" class="btn btn-primary" /> |
-            </div>
-        }
-
-        <hr />
         <div>
-            @Html.ActionLink(linkText: "Back to Student List", actionName: "AllStudents", controllerName: "Student")
+            <input type="submit" value="Delete Entry" class="btn btn-primary" /> 
         </div>
+    }
+
+    <hr />
+    <div>
+        @Html.ActionLink(linkText: "Back to Student List", actionName: "AllStudents", controllerName: "Student")
     </div>
 </div>
 

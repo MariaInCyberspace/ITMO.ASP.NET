@@ -7,9 +7,9 @@
 
 @using (Html.BeginForm())
 {
-<div class="customJumbo">
+<div>
 
-    <table>
+    <table class="table">
         <tr>
             <th>
                 @Html.LabelFor(record => record.CourseId)
@@ -46,12 +46,12 @@
         </tr>
     </table>
         <hr/>   
-    <div class="col-md-2">
+    <div>
         <input type="submit" value="Add Grade" class="btn btn-primary" />
     </div>
         
     <hr/>
-    <div class="form-group">
+    <div>
         @Html.ActionLink(linkText: "Back to Student List", actionName: "All Students", controllerName: "Student")
     </div>    
   
