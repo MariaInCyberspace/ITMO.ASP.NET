@@ -1,0 +1,52 @@
+﻿@model IEnumerable<StudentManagement.Models.Record>
+
+@{
+    ViewBag.Title = "All Records";
+}
+
+<h2>All Records</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(record => record.Course.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(record => record.Student.FirstName) &
+            @Html.DisplayNameFor(record => record.Student.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(record => record.Grade)
+        </th>
+    </tr>
+
+    @foreach (var record in Model.OrderByDescending(rec => rec.Grade))
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(rec => record.Course.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(rec => record.Student.FirstName) 
+                @Html.DisplayFor(rec => record.Student.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(rec => record.Grade)
+            </td>
+            <td>
+                @Html.ActionLink(linkText: "Change Grade", actionName: "ChangeRecord", controllerName: "Record", routeValues: new { recordId = record.RecordId }, htmlAttributes: null)
+                &#8226
+                @Html.ActionLink(linkText: "Delete Entry", actionName: "DeleteRecord", controllerName: "Record", routeValues: new { recordId = record.RecordId }, htmlAttributes: null)
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div>
+
+    @Html.ActionLink(linkText: "Back to Student List", actionName: "All Students", controllerName: "Student")
+
+</div>
+
+

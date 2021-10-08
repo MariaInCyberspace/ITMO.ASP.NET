@@ -1,0 +1,53 @@
+﻿@model IEnumerable<StudentManagement.Models.StudentTotalScore>
+
+@{
+    ViewBag.Title = "Top Five Students";
+}
+
+<h2>Top Five Students</h2>
+
+<div class="customJumbo">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(student => student.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(student => student.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(student => student.EntryDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(student => student.TotalScore)
+            </th>
+        </tr>
+
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(stud => student.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(stud => student.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(stud => student.EntryDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(stud => student.TotalScore)
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    <div>
+        @Html.ActionLink(linkText: "Back to Student List", actionName: "AllStudents", controllerName: "Student")
+    </div>
+</div>
+
+
+
+

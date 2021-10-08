@@ -1,0 +1,75 @@
+﻿@model StudentManagement.Models.Student
+
+@{
+    ViewBag.Title = Model.FirstName + " " + Model.LastName + "TotalScore";
+}
+
+<h2>@Model.FirstName @Model.LastName Total Score</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(student => student.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(student => student.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(student => student.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(student => student.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(student => student.EntryDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(student => student.EntryDate)
+        </dd>
+
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Course Title</th>
+                    <th>Grade</th>
+                    <th></th>
+                </tr>
+                @foreach (var record in Model.Records.OrderByDescending(r => r.Grade))
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(stud => record.Course.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(stud => record.Grade)
+                        </td>
+                        <td>
+                            @Html.ActionLink(linkText: "Change Grade", actionName: "ChangeRecord", controllerName: "Record", routeValues: new { recordId = record.RecordId }, htmlAttributes: null)
+                        </td>
+                        <td>
+                            @Html.ActionLink(linkText: "Delete Entry", actionName: "DeleteRecord", controllerName: "Record", routeValues: new { recordId = record.RecordId }, htmlAttributes: null)
+                        </td>
+                    </tr>
+                }
+                <tr>
+                    <th>Total Score</th>
+                    <td>
+                        @ViewBag.TotalScore
+                    </td>
+                </tr>
+            </table>
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink(linkText: "Change Name", actionName: "ChangeName", routeValues: new { id = Model.StudentId }, controllerName: "Student", htmlAttributes: null) |
+    @Html.ActionLink(linkText: "Back to Student List", actionName: "AllStudents", controllerName:"Student")
+</p>
+
+

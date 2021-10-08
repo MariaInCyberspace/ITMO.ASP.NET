@@ -1,0 +1,57 @@
+﻿@model StudentManagement.Models.Student
+
+@{
+    ViewBag.Title = "Delete " + Model.FirstName + " " + Model.LastName;
+}
+
+<h2>Delete @Model.FirstName @Model.LastName?</h2>
+
+<div class="customJumbo">
+        <div class="table-bordered">
+            <table>
+                <tr>
+                    <th>
+                        <div class="col-md-2">
+                            @Html.DisplayNameFor(student => student.FirstName)
+                        </div>
+                    </th>
+                    <td>
+                        <hr/>
+                    </td>
+                    <td>
+                        <div class="col-md-10">
+                            @Html.DisplayFor(student => student.FirstName)
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="col-md-2">
+                            @Html.DisplayNameFor(student => student.LastName)
+                        </div>
+                    </th>
+                    <td>
+                        <hr />
+                    </td>
+                    <td>
+                        <div class="col-md-10">
+                            @Html.DisplayFor(student => student.LastName)
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <hr />
+        <div>
+            <input type="submit" value="Delete" class="btn btn-primary" /> 
+        </div>
+        <hr />
+
+        <div>
+            <div>
+                @Html.ActionLink(linkText: "Back to Student List", actionName: "AllStudents", controllerName: "Student")
+            </div>
+        </div>
+    </div>
+
+

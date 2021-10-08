@@ -1,0 +1,14 @@
+﻿@model IEnumerable<StudentManagement.Models.Student>
+
+@{
+    ViewBag.Title = "Student Home";
+}
+
+<h2>Go to Student List</h2>
+
+<div class="customJumbo">
+    <p class="lead">
+        @Html.ActionLink(linkText:"Student List", actionName:"AllStudents", controllerName:"Student")
+    </p>
+</div>
+

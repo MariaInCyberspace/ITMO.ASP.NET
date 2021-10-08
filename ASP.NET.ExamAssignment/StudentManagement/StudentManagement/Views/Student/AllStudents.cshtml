@@ -1,0 +1,58 @@
+﻿@model IEnumerable<StudentManagement.Models.Student>
+
+@{
+    ViewBag.Title = "All Students";
+}
+
+<h2 class="col-md-2">Students List</h2>
+
+<div class="customJumbo">
+
+    <p>
+        @Html.ActionLink(linkText: "Add another Student", actionName: "AddStudent", controllerName: "Student")
+        &#8226
+        @Html.ActionLink(linkText: "Top Five Students", actionName: "TopFive", controllerName: "Student")
+
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(student => student.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(student => student.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(student => student.EntryDate)
+            </th>
+        </tr>
+
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(stud => student.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(stud => student.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(stud => student.EntryDate)
+                </td>
+                <td>
+                    @Html.ActionLink(linkText: "Add Grades", actionName: "AddGrades", controllerName: "Record", routeValues: new { studentId = student.StudentId }, htmlAttributes: null)
+                    &#8226
+                    @Html.ActionLink(linkText: "Total Score", actionName: "TotalScore", routeValues: new { studentId = student.StudentId }, controllerName: "Student", htmlAttributes: null)
+                    &#8226
+                    @Html.ActionLink(linkText: "Change Student Name", actionName: "ChangeName", routeValues: new { studentId = student.StudentId }, controllerName: "Student", htmlAttributes: null)
+                    &#8226
+                    @Html.ActionLink(linkText: "Delete Student", actionName: "DeleteStudent", routeValues: new { studentId = student.StudentId }, controllerName: "Student", htmlAttributes: null)
+                </td>
+            </tr>
+        }
+
+    </table>
+
+
+
+</div>

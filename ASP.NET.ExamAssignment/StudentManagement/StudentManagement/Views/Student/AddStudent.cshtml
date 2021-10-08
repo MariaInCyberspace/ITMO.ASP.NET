@@ -1,0 +1,62 @@
+﻿@model StudentManagement.Models.Student
+
+@{
+    ViewBag.Title = "Add Student";
+}
+
+<div class="col-md-2">
+    <h2>Add Student to the List</h2>
+</div>
+
+@using (Html.BeginForm())
+{
+<div class="customJumbo">
+    <table>
+        <tr>
+            <th>
+                @Html.LabelFor(student => student.FirstName)
+            </th>
+            <td>
+                @Html.EditorFor(student => student.FirstName)
+                @Html.ValidationMessageFor(student => student.FirstName)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.LabelFor(student => student.LastName)
+            </th>
+            <td>
+                @Html.EditorFor(student => student.LastName)
+                @Html.ValidationMessageFor(student => student.LastName)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.LabelFor(student => student.EntryDate)
+            </th>
+            <td>
+                @Html.EditorFor(student => student.EntryDate)
+                @Html.ValidationMessageFor(student => student.EntryDate)
+            </td>
+        </tr>
+    </table>
+
+    <hr/>
+    
+    <div>
+        <input type="submit" value="Add" class="btn btn-primary" />
+    </div>
+        
+    <hr/>
+
+    <div>
+        <div>
+            @Html.ActionLink(linkText: "Back to Student List", actionName: "AllStudents", controllerName: "Student")
+        </div>
+    </div>
+   
+
+</div>
+
+}
+

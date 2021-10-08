@@ -1,0 +1,59 @@
+﻿@model StudentManagement.Models.Record
+@{
+    ViewBag.Title = "Change Grades of " + Model.Student.FirstName + " " + Model.Student.LastName;
+}
+
+<h2>Change Record of @Model.Student.FirstName @Model.Student.LastName</h2>
+<h3>Student ID: @Model.StudentId</h3>
+
+
+
+@using (Html.BeginForm())
+    {
+<div class="customJumbo">
+
+    <div class="table">
+        <table>
+            <tr>
+                <th>
+                    @Html.LabelFor(record => record.Course.Title)
+
+                </th>
+                <td>   </td>
+                <td>
+                    @Html.EditorFor(record => record.CourseId)
+                    @Html.ValidationMessageFor(record => record.CourseId)
+                </td>
+            </tr>
+            <tr>
+                <th>@Html.LabelFor(record => record.StudentId)</th>
+                <th></th>
+                <td>
+                    @Html.EditorFor(record => record.StudentId)
+                    @Html.ValidationMessageFor(record => record.StudentId)
+                </td>
+            </tr>
+            <tr>
+                <th>Current Grade</th>
+                <td>  </td>
+                <td>
+                    @Html.EditorFor(record => record.Grade)
+                    @Html.ValidationMessageFor(record => record.Grade)
+                </td>
+            </tr>
+        </table>
+
+        <div>
+            <input type="submit" value="Save Changes" class="btn btn-primary" />
+        </div>
+        <hr />
+        <div>
+            @Html.ActionLink(linkText: "Back to Student List", actionName: "AllStudents", controllerName: "Student")
+        </div>
+    </div>
+</div>
+
+}
+
+
+

@@ -1,0 +1,62 @@
+﻿@model StudentManagement.Models.Record
+@{
+    ViewBag.Title = "Add Grades";
+}
+
+<h2>Add Grades</h2>
+
+@using (Html.BeginForm())
+{
+<div class="customJumbo">
+
+    <table>
+        <tr>
+            <th>
+                @Html.LabelFor(record => record.CourseId)
+            </th>
+            <td>
+                @Html.DropDownList("CourseId")
+                @Html.ValidationMessageFor(record => record.CourseId)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.LabelFor(record => record.StudentId)
+            </th>
+            <td>
+                @Html.DisplayFor(record => record.StudentId)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.Label("Student Name")
+            </th>
+            <td>
+                @ViewBag.StudentName
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.LabelFor(record => record.Grade, "Grade", htmlAttributes: new { @class = "col-md-2" })
+            </th>
+            <td>
+                @Html.EditorFor(record => record.Grade, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(record => record.Grade)
+            </td>
+        </tr>
+    </table>
+        <hr/>   
+    <div class="col-md-2">
+        <input type="submit" value="Add Grade" class="btn btn-primary" />
+    </div>
+        
+    <hr/>
+    <div class="form-group">
+        @Html.ActionLink(linkText: "Back to Student List", actionName: "All Students", controllerName: "Student")
+    </div>    
+  
+
+</div>
+
+}
+
