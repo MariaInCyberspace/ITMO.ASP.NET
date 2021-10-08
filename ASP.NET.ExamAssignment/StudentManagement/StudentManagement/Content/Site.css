@@ -7,6 +7,11 @@ a {
     color: #d7bd9e;
     border: dotted;
     padding: 3px;
+    min-width: 70px;
+}
+
+select, textarea {
+    min-width: 180px;
 }
 
 .navbar-inverse {

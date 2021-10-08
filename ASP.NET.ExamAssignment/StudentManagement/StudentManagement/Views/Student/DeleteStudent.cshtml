@@ -6,52 +6,38 @@
 
 <h2>Delete @Model.FirstName @Model.LastName?</h2>
 
-<div class="customJumbo">
-        <div class="table-bordered">
-            <table>
-                <tr>
-                    <th>
-                        <div>
-                            @Html.DisplayNameFor(student => student.FirstName)
-                        </div>
-                    </th>
-                    <td>
-                        <hr/>
-                    </td>
-                    <td>
-                        <div>
-                            @Html.DisplayFor(student => student.FirstName)
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <div>
-                            @Html.DisplayNameFor(student => student.LastName)
-                        </div>
-                    </th>
-                    <td>
-                        <hr />
-                    </td>
-                    <td>
-                        <div>
-                            @Html.DisplayFor(student => student.LastName)
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <hr />
-        <div>
-            <input type="submit" value="Delete" class="btn btn-primary" /> 
-        </div>
-        <hr />
+<div>
+        
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(student => student.FirstName)
+            </th>
+            
+            <td>
+                @Html.DisplayFor(student => student.FirstName)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(student => student.LastName)
+            </th>
+            <td>
+                @Html.DisplayFor(student => student.LastName)
+            </td>
+        </tr>
+    </table>
+</div>
+<hr />
+<div>
+    <input type="submit" value="Delete" class="btn btn-primary" /> 
+</div>
+<hr />
 
-        <div>
-            <div>
-                @Html.ActionLink(linkText: "Back to Student List", actionName: "AllStudents", controllerName: "Student")
-            </div>
-        </div>
+<div>
+    <div>
+        @Html.ActionLink(linkText: "Back to Student List", actionName: "AllStudents", controllerName: "Student")
     </div>
+</div>
 
 
