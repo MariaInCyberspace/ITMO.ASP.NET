@@ -6,113 +6,111 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.UI;
 using MVCCreditApp1.Models;
 
 namespace MVCCreditApp1.Controllers
 {
-    public class BidsController : Controller
+    public class CreditsController : Controller
     {
         private CreditContext db = new CreditContext();
 
-        // GET: Bids
-        [OutputCache(Duration = 60, Location = OutputCacheLocation.ServerAndClient)]
+        // GET: Credits
         public ActionResult Index()
         {
-            return View(db.Bids.ToList());
+            return View(db.Credits.ToList());
         }
 
-        // GET: Bids/Details/5
+        // GET: Credits/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bid bid = db.Bids.Find(id);
-            if (bid == null)
+            Credit credit = db.Credits.Find(id);
+            if (credit == null)
             {
                 return HttpNotFound();
             }
-            return View(bid);
+            return View(credit);
         }
 
-        // GET: Bids/Create
+        // GET: Credits/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Bids/Create
+        // POST: Credits/Create
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в разделе https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BidId,Name,CreditHead,bidDate")] Bid bid)
+        public ActionResult Create([Bind(Include = "CreditId,Head,Period,Sum,Percent")] Credit credit)
         {
             if (ModelState.IsValid)
             {
-                db.Bids.Add(bid);
+                db.Credits.Add(credit);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(bid);
+            return View(credit);
         }
 
-        // GET: Bids/Edit/5
+        // GET: Credits/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bid bid = db.Bids.Find(id);
-            if (bid == null)
+            Credit credit = db.Credits.Find(id);
+            if (credit == null)
             {
                 return HttpNotFound();
             }
-            return View(bid);
+            return View(credit);
         }
 
-        // POST: Bids/Edit/5
+        // POST: Credits/Edit/5
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в разделе https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BidId,Name,CreditHead,bidDate")] Bid bid)
+        public ActionResult Edit([Bind(Include = "CreditId,Head,Period,Sum,Percent")] Credit credit)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(bid).State = EntityState.Modified;
+                db.Entry(credit).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(bid);
+            return View(credit);
         }
 
-        // GET: Bids/Delete/5
+        // GET: Credits/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bid bid = db.Bids.Find(id);
-            if (bid == null)
+            Credit credit = db.Credits.Find(id);
+            if (credit == null)
             {
                 return HttpNotFound();
             }
-            return View(bid);
+            return View(credit);
         }
 
-        // POST: Bids/Delete/5
+        // POST: Credits/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Bid bid = db.Bids.Find(id);
-            db.Bids.Remove(bid);
+            Credit credit = db.Credits.Find(id);
+            db.Credits.Remove(credit);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
