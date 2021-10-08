@@ -42,7 +42,7 @@
                 <td>
                     @Html.ActionLink(linkText: "Add Grades", actionName: "AddGrades", controllerName: "Record", routeValues: new { studentId = student.StudentId }, htmlAttributes: null)
                     &#8226
-                    @Html.ActionLink(linkText: "Total Score", actionName: "TotalScore", routeValues: new { studentId = student.StudentId }, controllerName: "Student", htmlAttributes: null)
+                    @Html.ActionLink(linkText: "Grades and Total Score", actionName: "TotalScore", routeValues: new { studentId = student.StudentId }, controllerName: "Student", htmlAttributes: null)
                     &#8226
                     @Html.ActionLink(linkText: "Change Student Name", actionName: "ChangeName", routeValues: new { studentId = student.StudentId }, controllerName: "Student", htmlAttributes: null)
                     &#8226

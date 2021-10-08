@@ -37,10 +37,10 @@
         </tr>
         <tr>
             <th>
-                @Html.LabelFor(record => record.Grade, "Grade", htmlAttributes: new { @class = "col-md-2" })
+                @Html.LabelFor(record => record.Grade)
             </th>
             <td>
-                @Html.EditorFor(record => record.Grade, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(record => record.Grade)
                 @Html.ValidationMessageFor(record => record.Grade)
             </td>
         </tr>

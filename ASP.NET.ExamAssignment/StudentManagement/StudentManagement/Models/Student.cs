@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 
@@ -27,6 +28,7 @@ namespace StudentManagement.Models
         [DataType(DataType.DateTime)]
 
         [Required(ErrorMessage = "The field can't be left empty!")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yy}")]
         public DateTime EntryDate { get; set; }
         public virtual ICollection<Record> Records { get; set; }
     }
