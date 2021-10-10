@@ -42,6 +42,17 @@ namespace MVCCreditApp1.Controllers
             return View();
         }
 
+        public ActionResult BidSearch(string name)
+        {
+            var allBids = db.Bids.Where(a => a.CreditHead.Contains(name)).ToList();
+            if (allBids.Count == 0)
+            {
+                return Content("Specified bid " + name + "not found");
+                //return HttpNotFound();
+            }
+            return PartialView(allBids);
+        }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

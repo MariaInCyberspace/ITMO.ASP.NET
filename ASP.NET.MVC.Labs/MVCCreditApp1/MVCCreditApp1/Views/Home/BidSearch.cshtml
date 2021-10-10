@@ -1,0 +1,10 @@
+﻿@model IEnumerable<MVCCreditApp1.Models.Bid>
+<div id="results">
+    <h4> All loan applicants "@Model.First().CreditHead"</h4>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>@item.Name</li> }
+        </ul>
+    </div>
+

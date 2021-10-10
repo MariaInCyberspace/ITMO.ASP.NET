@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col-md-4">
-        <h3>Loan programs</h3> 
+        <h3>Loan programs</h3>
         <table class="table-bordered">
             <tr>
                 <td>
@@ -19,7 +19,7 @@
                 <td>
                     <p>Interest rate</p>
                 </td>
-            </tr> 
+            </tr>
             @foreach (var c in ViewBag.Credits)
             {
                 <tr>
@@ -36,10 +36,22 @@
                         <p>@c.Percent %</p>
                     </td>
                 </tr>
-             }
-        </table> 
+            }
+        </table>
         <p>
             <a class="btn btn-default" href="/Home/CreateBid">Apply for a loan &raquo;</a>
         </p>
+
+        <div>
+            <h5>View loan applicants</h5>
+        </div>
+        <div>
+            @using (Ajax.BeginForm("BidSearch", new AjaxOptions { UpdateTargetId = "results" }))
+            {
+                <input type="text" name="Name" />
+                <input type="submit" value="Search" />
+            }
+            <div id="results"> </div>
+        </div>
     </div>
 </div>
